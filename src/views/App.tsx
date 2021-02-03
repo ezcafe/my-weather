@@ -1,17 +1,27 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import { Dispatch } from 'redux';
+import { ConnectedRouter } from 'connected-react-router';
+import { History } from 'history';
 
 import LoadingIndicator from './components/loading-indicator/LoadingIndicator';
+import Toasts from './components/toasts/Toasts';
 import RouteEnum from '../constants/RouteEnum';
+import IAction from '../models/IAction';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const HomePage = lazy(() => import('./home-page/HomePage'));
 const NotFoundPage = lazy(() => import('./not-found-page/NotFoundPage'));
 
-export default function App(): JSX.Element {
+interface IProps {
+    readonly history: History;
+    readonly dispatch: Dispatch<IAction<any>>;
+}
+
+const App: React.FC<IProps> = (props) => {
     return (
-        <BrowserRouter>
+        <ConnectedRouter history={props.history}>
             <Suspense fallback={<LoadingIndicator />}>
                 <Switch>
                     <Route
@@ -21,7 +31,10 @@ export default function App(): JSX.Element {
                     />
                     <Route component={NotFoundPage} />
                 </Switch>
+                <Toasts />
             </Suspense>
-        </BrowserRouter>
+        </ConnectedRouter>
     );
-}
+};
+
+export default App;

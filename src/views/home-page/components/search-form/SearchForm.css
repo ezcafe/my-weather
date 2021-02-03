@@ -1,0 +1,10 @@
+.search-form {
+    margin-top: 10px;
+}
+
+.input-group-prepend {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
