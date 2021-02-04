@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Store } from 'redux';
 import { createBrowserHistory, History } from 'history';
-import './index.css';
 import App from './views/App';
 import reportWebVitals from './reportWebVitals';
 import IStore from './models/IStore';
 import rootStore from './stores/rootStore';
+
+import './index.css';
 
 (async (window: Window): Promise<void> => {
     const initialState: Partial<IStore> = {};

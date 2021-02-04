@@ -24,6 +24,8 @@ export default class LocationConsolidatedWeatherModel extends BaseModel {
     public readonly applicable_date: string = '';
     public readonly min_temp: number = 0;
     public readonly max_temp: number = 0;
+    public readonly weather_state_abbr: string = '';
+    public readonly weather_state_name: string = '';
 
     /*
      * Client-Side properties (Not from API)

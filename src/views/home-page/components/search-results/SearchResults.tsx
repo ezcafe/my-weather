@@ -1,22 +1,21 @@
 import { useSelector } from 'react-redux';
 import SearchResult from './SearchResult';
 import LoadingIndicator from '../../../components/loading-indicator/LoadingIndicator';
-import {
-    locationWeatherSelector,
-    isLoadingLocationWeatherSelector,
-} from '../../../../stores/locations/LocationsSelector';
+import { REQUEST_LOCATION_WEATHER } from '../../../../stores/locations/LocationsAction';
+import { locationWeatherSelector } from '../../../../stores/locations/LocationsSelector';
+import { selectRequesting } from '../../../../stores/requesting/RequestingSelector';
 import LocationWeatherModel from '../../../../stores/locations/models/LocationWeatherModel';
 import LocationConsolidatedWeatherModel from '../../../../stores/locations/models/LocationConsolidatedWeatherModel';
 
 const SearchResults: React.FC = () => {
-    const isLoadingLocationWeather: boolean = useSelector(
-        isLoadingLocationWeatherSelector
+    const isLoading: boolean = useSelector(
+        selectRequesting([REQUEST_LOCATION_WEATHER])
     );
     const locationWeather: LocationWeatherModel | undefined = useSelector(
         locationWeatherSelector
     );
 
-    if (isLoadingLocationWeather) {
+    if (isLoading) {
         return <LoadingIndicator />;
     }
 

@@ -11,11 +11,11 @@ export enum RequestMethod {
     Patch = 'PATCH',
 }
 
-export async function get(
+export const get = async (
     endpoint: string,
     params?: any,
     requestConfig?: AxiosRequestConfig
-): Promise<AxiosResponse | HttpErrorResponseModel> {
+): Promise<AxiosResponse | HttpErrorResponseModel> => {
     const paramsConfig: AxiosRequestConfig | undefined = params
         ? { params }
         : undefined;
@@ -30,12 +30,12 @@ export async function get(
             ...requestConfig,
         }
     );
-}
+};
 
-export async function post(
+export const post = async (
     endpoint: string,
     data?: any
-): Promise<AxiosResponse | HttpErrorResponseModel> {
+): Promise<AxiosResponse | HttpErrorResponseModel> => {
     const config: AxiosRequestConfig | undefined = data ? { data } : undefined;
 
     return _request(
@@ -45,12 +45,12 @@ export async function post(
         },
         config
     );
-}
+};
 
-export async function put(
+export const put = async (
     endpoint: string,
     data?: any
-): Promise<AxiosResponse | HttpErrorResponseModel> {
+): Promise<AxiosResponse | HttpErrorResponseModel> => {
     const config: AxiosRequestConfig | undefined = data ? { data } : undefined;
 
     return _request(
@@ -60,21 +60,21 @@ export async function put(
         },
         config
     );
-}
+};
 
-export async function del(
+export const del = async (
     endpoint: string
-): Promise<AxiosResponse | HttpErrorResponseModel> {
+): Promise<AxiosResponse | HttpErrorResponseModel> => {
     return _request({
         url: endpoint,
         method: RequestMethod.Delete,
     });
-}
+};
 
-export async function _request(
+export const _request = async (
     restRequest: Partial<Request>,
     config?: AxiosRequestConfig
-): Promise<AxiosResponse | HttpErrorResponseModel> {
+): Promise<AxiosResponse | HttpErrorResponseModel> => {
     if (!Boolean(restRequest.url)) {
         console.error(
             `Received ${restRequest.url} which is invalid for a endpoint url`
@@ -160,12 +160,12 @@ export async function _request(
             restRequest
         );
     }
-}
+};
 
-function _fillInErrorWithDefaults(
+const _fillInErrorWithDefaults = (
     error: Partial<HttpErrorResponseModel>,
     request: Partial<Request>
-): HttpErrorResponseModel {
+): HttpErrorResponseModel => {
     const model = new HttpErrorResponseModel();
 
     model.status = error.status || 0;
@@ -180,7 +180,7 @@ function _fillInErrorWithDefaults(
     model.errors = model.errors.filter(Boolean);
 
     return model;
-}
+};
 
 /**
  * We want to show the loading indicator to the user but sometimes the api
@@ -191,6 +191,6 @@ function _fillInErrorWithDefaults(
  * @returns {Promise<void>}
  * @private
  */
-function _delay(duration: number = 250): Promise<void> {
+const _delay = (duration: number = 250): Promise<void> => {
     return new Promise((resolve) => setTimeout(resolve, duration));
-}
+};

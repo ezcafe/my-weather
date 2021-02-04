@@ -6,12 +6,12 @@ import HttpErrorResponseModel from '../models/HttpErrorResponseModel';
 type FlattenIfArray<T> = T extends (infer R)[] ? R : T;
 type SingleItemOrArray<T> = T extends [] ? T[] : T;
 
-export async function getToModel<T>(
+export const getToModel = async <T>(
     Model: IConstructor<FlattenIfArray<T>>,
     endpoint: string,
     params?: any,
     requestConfig?: AxiosRequestConfig
-): Promise<SingleItemOrArray<T> | HttpErrorResponseModel> {
+): Promise<SingleItemOrArray<T> | HttpErrorResponseModel> => {
     const response:
         | AxiosResponse
         | HttpErrorResponseModel = await HttpUtility.get(
@@ -21,24 +21,24 @@ export async function getToModel<T>(
     );
 
     return _restModelCreator<T>(Model, response);
-}
+};
 
-export async function postToModel<T>(
+export const postToModel = async <T>(
     Model: IConstructor<FlattenIfArray<T>>,
     endpoint: string,
     data?: any
-): Promise<SingleItemOrArray<T> | HttpErrorResponseModel> {
+): Promise<SingleItemOrArray<T> | HttpErrorResponseModel> => {
     const response:
         | AxiosResponse
         | HttpErrorResponseModel = await HttpUtility.post(endpoint, data);
 
     return _restModelCreator<T>(Model, response);
-}
+};
 
-function _restModelCreator<T>(
+const _restModelCreator = <T>(
     Model: IConstructor<FlattenIfArray<T>>,
     response: AxiosResponse | HttpErrorResponseModel
-): SingleItemOrArray<T> | HttpErrorResponseModel {
+): SingleItemOrArray<T> | HttpErrorResponseModel => {
     if (response instanceof HttpErrorResponseModel) {
         return response;
     }
@@ -46,4 +46,4 @@ function _restModelCreator<T>(
     return !Array.isArray(response.data)
         ? new Model(response.data)
         : (response.data.map((json) => new Model(json)) as any);
-}
+};

@@ -31,7 +31,7 @@ MetaWeather: https://www.metaweather.com/api/
 -   React Bootstrap: https://react-bootstrap.github.io/components/spinners/
 -   React Redux: https://react-redux.js.org/
 -   React Router: https://reactrouter.com/
--   React Select: https://react-select.com/home
+-   React Select: https://react-select.com/
 -   Redux DevTools Extension: https://github.com/zalmoxisus/redux-devtools-extension
 -   redux-saga: https://redux-saga.js.org/
 -   sjs-base-model: https://github.com/codeBelt/sjs-base-model
@@ -44,6 +44,7 @@ MetaWeather: https://www.metaweather.com/api/
 -   Show weather of current location
 -   Add default locations
 -   Change background and theme automatically
+-   Localization
 -   Show date - time
 -   Show quotes
 -   Custom themes

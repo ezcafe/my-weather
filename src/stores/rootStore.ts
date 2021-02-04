@@ -8,12 +8,11 @@ import rootSaga from './rootSaga';
 import IStore from '../models/IStore';
 import errorToastMiddleware from './middlewares/errorToastMiddleware';
 
-export default function rootStore(
+const rootStore = (
     initialState: Partial<IStore>,
     history: History
-): Store<IStore> {
+): Store<IStore> => {
     const sagaMiddleware = createSagaMiddleware();
-
     const middleware: Middleware[] = [
         sagaMiddleware,
         routerMiddleware(history),
@@ -34,4 +33,6 @@ export default function rootStore(
     sagaMiddleware.run(rootSaga);
 
     return store;
-}
+};
+
+export default rootStore;

@@ -1,10 +1,10 @@
 import IAction from '../models/IAction';
 
-export function createAction<T = undefined>(
+export const createAction = <T = undefined>(
     type: string,
     payload?: T,
     error: boolean = false,
     meta: any = null
-): IAction<T> {
+): IAction<T> => {
     return { type, payload, error, meta };
-}
+};

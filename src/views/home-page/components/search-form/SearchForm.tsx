@@ -4,13 +4,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import Select, { OptionTypeBase } from 'react-select';
 import { Dispatch } from 'redux';
 import {
+    REQUEST_LOCATIONS,
     requestLocationsAction,
     requestLocationWeatherAction,
 } from '../../../../stores/locations/LocationsAction';
-import {
-    isLoadingLocationsSelector,
-    locationsSelector,
-} from '../../../../stores/locations/LocationsSelector';
+import { locationsSelector } from '../../../../stores/locations/LocationsSelector';
+import { selectRequesting } from '../../../../stores/requesting/RequestingSelector';
 import LocationModel from '../../../../stores/locations/models/LocationModel';
 
 import './SearchForm.css';
@@ -29,7 +28,9 @@ const SearchForm: React.FC = () => {
     const [selectedValue, setSelectedValue] = useState<OptionTypeBase | null>(
         null
     );
-    const isLoading: boolean = useSelector(isLoadingLocationsSelector);
+    const isLoading: boolean = useSelector(
+        selectRequesting([REQUEST_LOCATIONS])
+    );
     const locations: LocationModel[] = useSelector(locationsSelector);
 
     const onChange = (option: OptionTypeBase | null) => {
@@ -68,9 +69,11 @@ const SearchForm: React.FC = () => {
                 <Select
                     cacheOptions
                     isLoading={isLoading}
+                    noOptionsMessage={() => 'No city'}
                     onChange={onChange}
                     onInputChange={onInputChange}
                     options={options}
+                    placeholder="Enter city name"
                     styles={customStyles}
                     value={selectedValue}
                 />

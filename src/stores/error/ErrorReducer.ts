@@ -9,10 +9,6 @@ import { Reducer } from 'redux';
 
 export const initialState: IErrorState = {};
 
-interface INewState {
-    [key: string]: HttpErrorResponseModel;
-}
-
 const errorReducer: Reducer = (
     state: IErrorState = initialState,
     action: IAction<any>
@@ -26,17 +22,17 @@ const errorReducer: Reducer = (
         // Create a new state without the error that has the same id as the payload.
         return Object.entries(state).reduce(
             (
-                newState: INewState,
+                newState: object,
                 [key, value]: [string, HttpErrorResponseModel]
             ) => {
                 if (value.id !== payload) {
-                    newState[key] = value;
+                    return { ...newState, [key]: value };
                 }
 
                 return newState;
             },
             {}
-        ) as IErrorState;
+        );
     }
 
     /*
