@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResult should show component 1`] = `
+<div>
+  <div
+    class="col"
+  >
+    <div
+      class="search-result"
+    >
+      <img
+        alt="Heavy Cloud"
+        src="https://www.metaweather.com/static/img/weather/hc.svg"
+      />
+      <h2>
+        Wednesday
+      </h2>
+      <span>
+        Min: 8
+      </span>
+      <span>
+        Max: 12
+      </span>
+    </div>
+  </div>
+</div>
+`;

@@ -33,6 +33,7 @@ MetaWeather: https://www.metaweather.com/api/
 -   React Router: https://reactrouter.com/
 -   React Select: https://react-select.com/
 -   Redux DevTools Extension: https://github.com/zalmoxisus/redux-devtools-extension
+-   Redux Saga Test Plan: https://github.com/jfairbank/redux-saga-test-plan
 -   redux-saga: https://redux-saga.js.org/
 -   sjs-base-model: https://github.com/codeBelt/sjs-base-model
 -   uuid: https://github.com/uuidjs/uuid

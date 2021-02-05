@@ -1,8 +1,8 @@
-import * as ActionUtility from '../../utilities/ActionUtility';
-import IAction from '../../models/IAction';
-import ToastStatusEnum from '../../constants/ToastStatusEnum';
-import IToast from './models/IToast';
 import { v4 as uuidv4 } from 'uuid';
+import IToast from './models/IToast';
+import ToastStatusEnum from '../../constants/ToastStatusEnum';
+import IAction from '../../models/IAction';
+import * as ActionUtility from '../../utilities/ActionUtility';
 
 export const ADD_TOAST: string = 'ToastsAction.ADD_TOAST';
 

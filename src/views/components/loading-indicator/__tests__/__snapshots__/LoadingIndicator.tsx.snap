@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingIndicator should show component 1`] = `
+<div>
+  <div
+    class="ai spinner-border spinner-border-sm"
+    role="status"
+  >
+    <span
+      class="sr-only"
+    >
+      Hi there
+    </span>
+  </div>
+</div>
+`;

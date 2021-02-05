@@ -11,7 +11,7 @@ import { fetchLocations, fetchLocationWeather } from '../../apis/locations';
 import IAction from '../../models/IAction';
 import HttpErrorResponseModel from '../../models/HttpErrorResponseModel';
 
-function* requestLocations(action: IAction<string>) {
+export function* requestLocations(action: IAction<string>) {
     const { payload: location } = action;
     if (!location) {
         return;
@@ -23,7 +23,7 @@ function* requestLocations(action: IAction<string>) {
     yield put(requestLocationsFinishedAction(model));
 }
 
-function* requestLocationWeather(action: IAction<string>) {
+export function* requestLocationWeather(action: IAction<string>) {
     const { payload: woeid } = action;
     if (!woeid) {
         return;

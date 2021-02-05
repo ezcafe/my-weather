@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResults should show loading indicator 1`] = `
+<div>
+  <div
+    class="ai spinner-border spinner-border-sm"
+    role="status"
+  >
+    <span
+      class="sr-only"
+    >
+      Loading...
+    </span>
+  </div>
+</div>
+`;
+
+exports[`SearchResults should show nothing 1`] = `<div />`;
+
+exports[`SearchResults should show results 1`] = `
+<div>
+  <div
+    class="col"
+  >
+    <div
+      class="search-result"
+    >
+      <img
+        alt="Heavy Cloud"
+        src="https://www.metaweather.com/static/img/weather/hc.svg"
+      />
+      <h2>
+        Wednesday
+      </h2>
+      <span>
+        Min: 8
+      </span>
+      <span>
+        Max: 12
+      </span>
+    </div>
+  </div>
+</div>
+`;
