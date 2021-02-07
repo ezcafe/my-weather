@@ -21,23 +21,6 @@ yarn start
 
 `yarn test`
 
-## API
-
-MetaWeather: https://www.metaweather.com/api/
-
-## 3rd libraries
-
--   Day.js: https://day.js.org/
--   React Bootstrap: https://react-bootstrap.github.io/components/spinners/
--   React Redux: https://react-redux.js.org/
--   React Router: https://reactrouter.com/
--   React Select: https://react-select.com/
--   Redux DevTools Extension: https://github.com/zalmoxisus/redux-devtools-extension
--   Redux Saga Test Plan: https://github.com/jfairbank/redux-saga-test-plan
--   redux-saga: https://redux-saga.js.org/
--   sjs-base-model: https://github.com/codeBelt/sjs-base-model
--   uuid: https://github.com/uuidjs/uuid
-
 ## TODO list
 
 -   Show all weather related information
@@ -49,3 +32,20 @@ MetaWeather: https://www.metaweather.com/api/
 -   Show date - time
 -   Show quotes
 -   Custom themes
+
+## API
+
+MetaWeather: https://www.metaweather.com/api/
+
+## Libraries
+
+-   Day.js: https://day.js.org/
+-   React Bootstrap: https://react-bootstrap.github.io/components/spinners/
+-   React Redux: https://react-redux.js.org/
+-   React Router: https://reactrouter.com/
+-   React Select: https://react-select.com/
+-   Redux DevTools Extension: https://github.com/zalmoxisus/redux-devtools-extension
+-   Redux Saga Test Plan: https://github.com/jfairbank/redux-saga-test-plan
+-   redux-saga: https://redux-saga.js.org/
+-   sjs-base-model: https://github.com/codeBelt/sjs-base-model
+-   uuid: https://github.com/uuidjs/uuid

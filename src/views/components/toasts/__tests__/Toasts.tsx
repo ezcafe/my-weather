@@ -16,4 +16,13 @@ describe('Toasts', () => {
         });
         expect(container).toMatchSnapshot();
     });
+
+    test('should show nothing', () => {
+        const { container } = renderComponent({
+            toasts: {
+                items: [],
+            },
+        });
+        expect(container).toMatchSnapshot();
+    });
 });

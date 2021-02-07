@@ -4,9 +4,7 @@ import IToast from '../../../stores/toasts/models/IToast';
 import ToastCard from './Toast';
 import './Toasts.css';
 
-interface IProps {}
-
-const Toasts: React.FC<IProps> = (props: React.PropsWithChildren<IProps>) => {
+const Toasts: React.FC = () => {
     const toasts: IToast[] = useSelector(toastsSelector);
 
     if (toasts.length === 0) {

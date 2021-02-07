@@ -31,7 +31,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --all --no-watchman",
+    "test": "react-scripts test --coverage --no-watchman",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

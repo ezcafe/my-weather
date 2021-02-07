@@ -45,3 +45,5 @@ exports[`Toasts should show component 1`] = `
   </div>
 </div>
 `;
+
+exports[`Toasts should show nothing 1`] = `<div />`;
