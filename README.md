@@ -4,6 +4,8 @@
 
 My Weather shows the next 5 days weather of selected city
 
+![demo](./demo/My-Weather.png 'My-Weather')
+
 ## Getting started
 
 Open terminal and run the following commands
@@ -17,9 +19,13 @@ yarn install
 yarn start
 ```
 
+**Note**: yarn@1.22.5, node@v14.15.4, npm@6.14.10
+
 ### Run test
 
-`yarn test`
+```
+yarn test
+```
 
 ## TODO list
 

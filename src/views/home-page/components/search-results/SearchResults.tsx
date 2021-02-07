@@ -23,9 +23,10 @@ const SearchResults: React.FC = () => {
         return null;
     }
 
-    const consolidatedWeather: LocationConsolidatedWeatherModel[] =
-        locationWeather.consolidated_weather;
-    consolidatedWeather.length = 5; // limit 5 dates
+    const consolidatedWeather: LocationConsolidatedWeatherModel[] = locationWeather.consolidated_weather.slice(
+        0,
+        5
+    ); // limit 5 dates
 
     return (
         <>

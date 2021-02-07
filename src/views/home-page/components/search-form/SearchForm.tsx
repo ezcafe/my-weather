@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { InputGroup, Form } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Select, { OptionTypeBase } from 'react-select';
@@ -40,16 +40,12 @@ const SearchForm: React.FC = () => {
         }
     };
 
-    const onInputChange = useCallback(
-        (newValue: string) => {
-            const inputValue = newValue.replace(/\W/g, '');
-            if (inputValue) {
-                dispatch(requestLocationsAction(inputValue));
-            }
-            return inputValue;
-        },
-        [dispatch]
-    );
+    const onInputChange = (newValue: string) => {
+        if (newValue) {
+            dispatch(requestLocationsAction(newValue));
+        }
+        return newValue;
+    };
 
     const options = useMemo(
         (): ReadonlyArray<OptionTypeBase> =>
